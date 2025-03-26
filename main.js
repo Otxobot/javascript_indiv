@@ -12,7 +12,7 @@ async function main() {
     // console.log(routine_result)
 
 
-    const template = await fetch("https://wger.de/api/v2/exerciseimage/", {
+    const images = await fetch("https://wger.de/api/v2/exerciseimage/", {
         method: "GET",
         headers: {
             "Authorization": "Token d93103f284c50fe1adb30ed74034edb80513c171",
@@ -20,9 +20,11 @@ async function main() {
         }
     });
 
-    template_result = await template.json()
+    images_result = await images.json()
+    to_image_classes(images_result);
 
-    console.log(template_result);
+
+    console.log(images_result);
 }
 
 main();
