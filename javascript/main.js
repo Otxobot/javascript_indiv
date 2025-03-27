@@ -23,7 +23,6 @@ async function main() {
     images_result = await images.json()
     to_image_classes(images_result);
 
-
     console.log(images_result);
 }
 
