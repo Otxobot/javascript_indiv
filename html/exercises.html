@@ -9,11 +9,52 @@
 <body>
     <header id="header"></header>
 
-    <main></main>
+    <main>
+        <select id="muscle">
+            <option value="abdominals">Abdominals</option>
+            <option value="abductors">Abductors</option>
+            <option value="adductors">Adductors</option>
+            <option value="biceps">Biceps</option>
+            <option value="calves">Calves</option>
+            <option value="chest">Chest</option>
+            <option value="forearms">Forearms</option>
+            <option value="glutes">Glutes</option>
+            <option value="hamstrings">Hamstrings</option>
+            <option value="lats">Lats</option>
+            <option value="lower_back">Lower Back</option>
+            <option value="middle_back">Middle Back</option>
+            <option value="neck">Neck</option>
+            <option value="quadriceps">Quadriceps</option>
+            <option value="traps">Traps</option>
+            <option value="triceps">Triceps</option>
+        </select>
+
+        <select id="type">
+            <option value="cardio">cardio</option>
+            <option value="olympic_weightlifting">olympic_weightlifting</option>
+            <option value="plyometrics">plyometrics</option>
+            <option value="powerlifting">powerlifting</option>
+            <option value="strength">strength</option>
+            <option value="stretching">stretching</option>
+            <option value="strongman">strongman</option>
+        </select>
+        
+        <select id="difficulty">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="expert">Expert</option>
+        </select>
+        
+        <button onclick="applyFilters()">Search</button>
+        
+        <div id="exercise-results"></div>
+
+    </main>
 
     <footer></footer>
-    
+
     <script defer type="module" src="../javascript/header.js"></script>
     <script defer type="module" src="../javascript/footer.js"></script>
+    <script defer type="module" src="../javascript/exercises.js"></script>
 </body>
 </html>
