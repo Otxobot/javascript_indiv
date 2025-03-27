@@ -1,15 +1,6 @@
 import { Exercise } from './clases.js';
 
 
-async function applyFilters() {
-    const muscle = document.getElementById("muscle").value;
-    const type = document.getElementById("type").value;
-    const difficulty = document.getElementById("difficulty").value;
-
-    const exercises = await fetchExercises(muscle, type, difficulty);
-    displayExercises(exercises);
-}
-
 async function fetchExercises(type = "", muscle = "", difficulty = "") {
     /*
     
@@ -40,20 +31,25 @@ async function fetchExercises(type = "", muscle = "", difficulty = "") {
             "Accept": "application/json"
         }
     });
+    console.log("response: ", response);
     const data = await response.json();
+    console.log("dataaa: ", data);
     // console.log(data)
     
-    return data.map(ex => new Exercise(
-        ex.name, ex.type, ex.muscle,
-        ex.equipment, ex.difficulty,
-        ex.instructions
-    ));
+    // return data.map(ex => new Exercise(
+    //     ex.name, ex.type, ex.muscle,
+    //     ex.equipment, ex.difficulty,
+    //     ex.instructions
+    // ));
+    return data;
 }
 
-
 function displayExercises(exercises) {
+    console.log("entrando aqui")
     const container = document.getElementById("exercise-results");
     container.innerHTML = ""; // Clear previous results
+
+    console.log(exercises)
 
     exercises.forEach(ex => {
         const card = document.createElement("div");
@@ -67,3 +63,15 @@ function displayExercises(exercises) {
         container.appendChild(card);
     });
 }
+
+async function applyFilters() {
+    const muscle = document.getElementById("muscle").value;
+    const type = document.getElementById("type").value;
+    const difficulty = document.getElementById("difficulty").value;
+
+
+    const exercises = await fetchExercises(type, muscle, difficulty);
+    displayExercises(exercises);
+}
+
+window.applyFilters = applyFilters;

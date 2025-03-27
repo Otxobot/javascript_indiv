@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const footer = document.getElementById('footer');
 
         const p = document.createElement('p');
-        p.textContent = '© 2025 SpaceExplorer. All rights reserved.';
+        p.textContent = '© 2025 Exercise API. All rights reserved.';
 
         const socialIconsDiv = document.createElement('div');
         socialIconsDiv.classList.add('social-icons');

@@ -8,8 +8,18 @@
 </head>
 <body>
     <header id="header"></header>
-
+    
     <main>
+        <select id="type">
+            <option value="cardio">cardio</option>
+            <option value="olympic_weightlifting">olympic_weightlifting</option>
+            <option value="plyometrics">plyometrics</option>
+            <option value="powerlifting">powerlifting</option>
+            <option value="strength">strength</option>
+            <option value="stretching">stretching</option>
+            <option value="strongman">strongman</option>
+        </select>
+        
         <select id="muscle">
             <option value="abdominals">Abdominals</option>
             <option value="abductors">Abductors</option>
@@ -29,15 +39,6 @@
             <option value="triceps">Triceps</option>
         </select>
 
-        <select id="type">
-            <option value="cardio">cardio</option>
-            <option value="olympic_weightlifting">olympic_weightlifting</option>
-            <option value="plyometrics">plyometrics</option>
-            <option value="powerlifting">powerlifting</option>
-            <option value="strength">strength</option>
-            <option value="stretching">stretching</option>
-            <option value="strongman">strongman</option>
-        </select>
         
         <select id="difficulty">
             <option value="beginner">Beginner</option>
@@ -51,10 +52,10 @@
 
     </main>
 
-    <footer></footer>
+    <footer id="footer"></footer>
 
+    <script defer type="module" src="../javascript/exercises.js"></script>
     <script defer type="module" src="../javascript/header.js"></script>
     <script defer type="module" src="../javascript/footer.js"></script>
-    <script defer type="module" src="../javascript/exercises.js"></script>
 </body>
 </html>
