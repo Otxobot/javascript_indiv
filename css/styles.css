@@ -145,7 +145,7 @@ button {
     color: white;
     font-size: 1rem;
     border-radius: 6px;
-    cursor: pointer;
+    cursor: pointer;  
     transition: 0.3s;
 }
 
@@ -153,10 +153,15 @@ button:hover {
     background: #0056b3;
 }
 
+.exercise-results{
+  display: flex;
+  justify-content: space-between;
+}
+
   .exercise-card {
     padding: 1rem;
     margin: auto;
-    border-width: 10px;
-    border-radius: 10px;
+    border: 1px solid #000000;
+
 
   }
