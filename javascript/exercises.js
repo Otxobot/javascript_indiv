@@ -31,23 +31,28 @@ async function fetchExercises(type = "", muscle = "", difficulty = "") {
             "Accept": "application/json"
         }
     });
-    console.log("response: ", response);
     const data = await response.json();
-    console.log("dataaa: ", data);
-    // console.log(data)
     
-    // return data.map(ex => new Exercise(
-    //     ex.name, ex.type, ex.muscle,
-    //     ex.equipment, ex.difficulty,
-    //     ex.instructions
-    // ));
-    return data;
+    return data.map(ex => new Exercise(
+        ex.name, ex.type, ex.muscle,
+        ex.equipment, ex.difficulty,
+        ex.instructions
+    ));
+    // return data;
 }
 
 function displayExercises(exercises) {
     console.log("entrando aqui")
     const container = document.getElementById("exercise-results");
     container.innerHTML = ""; // Clear previous results
+
+    if (exercises.length == 0)
+    {
+        console.log("exercises empty")
+        const error = document.createElement('p');
+        error.textContent = "Nothing in the API for you";
+        container.appendChild(error);
+    }
 
     console.log(exercises)
 
@@ -58,7 +63,10 @@ function displayExercises(exercises) {
             <h3>${ex.name}</h3>
             <p><strong>Muscle:</strong> ${ex.muscle}</p>
             <p><strong>Type:</strong> ${ex.type}</p>
+            <p><strong>Equipment:</strong> ${ex.equipment}</p>
             <p><strong>Difficulty:</strong> ${ex.difficulty}</p>
+            <p><strong>Instructions:</strong> ${ex.instructions}</p>
+
         `;
         container.appendChild(card);
     });
