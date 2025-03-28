@@ -54,6 +54,7 @@ body {
     color: white;
     text-decoration: none;
     font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     transition: all 0.3s ease;
     padding: 8px 0;
     position: relative;
@@ -87,6 +88,23 @@ body {
     flex-direction: column;
     align-items: center;
     z-index: 2;
+  }
+
+  #main-index {
+    display: flex;
+    justify-content: center;
+    border: 10px solid black;
+  }
+  
+  .button1 {
+    padding: 1.6rem 2rem;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;  
+    transition: 0.3s;
   }
 
   footer {
