@@ -19,13 +19,12 @@ class Exercise {
     }
 }
 
-class WorkoutEntry {
-    constructor(exerciseName, sets, reps, weight) {
-        this.exerciseName = exerciseName;
-        this.sets = sets;
-        this.reps = reps;
-        this.weight = weight;
-        this.date = new Date().toLocaleDateString();
-    }
-}
-
+// class WorkoutEntry {
+//     constructor(exerciseName, sets, reps, weight) {
+//         this.exerciseName = exerciseName;
+//         this.sets = sets;
+//         this.reps = reps;
+//         this.weight = weight;
+//         this.date = new Date().toLocaleDateString();
+//     }
+// }

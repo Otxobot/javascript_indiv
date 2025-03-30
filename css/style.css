@@ -74,6 +74,34 @@
     background-color: var(--dark-gray);
   }
 
+  #exercise {
+    width: 10rem;
+    height: 3rem;
+    border: 2px solid var(--primary-blue);
+    border-radius: 10px;
+  }
+
+  #sets {
+    width: 10rem;
+    height: 3rem;
+    border: 2px solid var(--primary-blue);
+    border-radius: 10px;
+  }
+
+  #reps {
+    width: 10rem;
+    height: 3rem;
+    border: 2px solid var(--primary-blue);
+    border-radius: 10px;
+  }
+
+  #weight {
+    width: 10rem;
+    height: 3rem;
+    border: 2px solid var(--primary-blue);
+    border-radius: 10px;
+  }
+
   /* Layout */
   /* .container {
     width: 100%;
