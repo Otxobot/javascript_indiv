@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("header").innerHTML = `
-    <button class="menu-toggle" aria-label="Toggle navigation menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </button>
+
     <nav>
         <ul class="nav-links">
             <li><a href="../html/index.html">Home</a></li>
@@ -20,3 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
         navLinks.classList.toggle('show');
     });
 });
+
+{/* <button class="menu-toggle" aria-label="Toggle navigation menu">
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+</button> */}
