@@ -52,16 +52,14 @@ async function displayExercises(exercises) {
         container.appendChild(error);
     }
 
-    // console.log(exercises);
+    // const images = await fetch("https://wger.de/api/v2/exerciseimage/", {
+    //     headers: {
+    //         "Authorization": "Token WnzOrCpuawSpe4EKPUYLIA==HmJyHb3mtzZ2jhsO",
+    //         "Accept": "application/json"
+    //     }
+    // });
 
-    const images = await fetch("https://wger.de/api/v2/exerciseimage/", {
-        headers: {
-            "Authorization": "Token WnzOrCpuawSpe4EKPUYLIA==HmJyHb3mtzZ2jhsO",
-            "Accept": "application/json"
-        }
-    });
-
-    const images_result = await images.json()
+    // const images_result = await images.json()
 
     exercises.forEach(ex => {
         const card = document.createElement("div");
