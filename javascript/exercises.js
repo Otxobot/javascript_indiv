@@ -1,3 +1,4 @@
+import stringSimilarity from "string-similarity";
 import { Exercise } from './clases.js';
 
 
@@ -40,7 +41,7 @@ async function fetchExercises(type = "", muscle = "", difficulty = "") {
     ));
 }
 
-function displayExercises(exercises) {
+async function displayExercises(exercises) {
     console.log("entrando aqui")
     const container = document.getElementById("exercise-results");
     container.innerHTML = ""; // Clear previous results
@@ -53,10 +54,33 @@ function displayExercises(exercises) {
         container.appendChild(error);
     }
 
-    console.log(exercises)
+    // console.log(exercises);
+
+    const images = await fetch("https://wger.de/api/v2/exerciseimage/", {
+        headers: {
+            "Authorization": "Token WnzOrCpuawSpe4EKPUYLIA==HmJyHb3mtzZ2jhsO",
+            "Accept": "application/json"
+        }
+    });
+
+    const images_result = await images.json()
+
+    console.log(images_result);
+    console.log(images_result.results)
+    console.log("images url: ", images_result.results[0].image);
 
     exercises.forEach(ex => {
         const card = document.createElement("div");
+        if (images_result)
+        {
+            for (let i = 0; i < images_result.length; i++)
+            {
+                if (fuzzySearch(ex.name, images_result.results[i].image)) 
+                {
+                    console.log(images_result.results[i].image);
+                }
+            }
+        }
         card.classList.add("exercise-card");
         card.innerHTML = `
             <h3>${ex.name}</h3>
@@ -65,6 +89,7 @@ function displayExercises(exercises) {
             <p><strong>Equipment:</strong> ${ex.equipment}</p>
             <p><strong>Difficulty:</strong> ${ex.difficulty}</p>
             <p><strong>Instructions:</strong> ${ex.instructions}</p>
+            
 
         `;
         container.appendChild(card);
@@ -82,3 +107,14 @@ async function applyFilters() {
 }
 
 window.applyFilters = applyFilters;
+
+function fuzzySearch(needle, haystack, threshold = 0.5) {
+    const words = haystack.split(/\s+/); // Split into words
+    for (const word of words) {
+        const similarity = stringSimilarity.compareTwoStrings(needle, word);
+        if (similarity >= threshold) {
+            return true; // Found a similar match
+        }
+    }
+    return false; // No match found
+}
