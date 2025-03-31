@@ -1,3 +1,5 @@
+import { WorkoutEntry } from './clases.js'
+
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("workout-form");
     const workoutList = document.getElementById("workout-list");
@@ -12,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <td>${workout.sets}</td>
                 <td>${workout.reps}</td>
                 <td>${workout.weight} kg</td>
+                <td>${workout.date}</td>
                 <td>
                     <button onclick="deleteWorkout(${index})">❌</button>
                 </td>
@@ -27,7 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const reps = document.getElementById("reps").value;
         const weight = document.getElementById("weight").value;
 
-        workouts.push({ exercise, sets, reps, weight });
+        const workout = new WorkoutEntry(exercise, sets, reps, weight);
+
+        workouts.push(workout);
         localStorage.setItem("workouts", JSON.stringify(workouts));
         renderWorkouts();
         form.reset();

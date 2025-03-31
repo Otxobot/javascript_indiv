@@ -38,7 +38,6 @@ async function fetchExercises(type = "", muscle = "", difficulty = "") {
         ex.equipment, ex.difficulty,
         ex.instructions
     ));
-    // return data;
 }
 
 function displayExercises(exercises) {

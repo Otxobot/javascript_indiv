@@ -1,4 +1,4 @@
-export { Image, Exercise}
+export { Image, Exercise, WorkoutEntry}
 
 class Image {
     constructor(id, image)
@@ -19,12 +19,12 @@ class Exercise {
     }
 }
 
-// class WorkoutEntry {
-//     constructor(exerciseName, sets, reps, weight) {
-//         this.exerciseName = exerciseName;
-//         this.sets = sets;
-//         this.reps = reps;
-//         this.weight = weight;
-//         this.date = new Date().toLocaleDateString();
-//     }
-// }
+class WorkoutEntry {
+    constructor(exercise, sets, reps, weight) {
+        this.exercise = exercise;
+        this.sets = sets;
+        this.reps = reps;
+        this.weight = weight;
+        this.date = new Date().toLocaleDateString();
+    }
+}
