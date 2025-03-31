@@ -1,4 +1,4 @@
-export { Image, Exercise, WorkoutEntry}
+export { Image, Exercise}
 
 class Image {
     constructor(id, image)

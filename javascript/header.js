@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const navLinks = document.querySelector('.nav-links');
         navLinks.classList.toggle('show');
     });
-});
+}); 
 
 {/* <button class="menu-toggle" aria-label="Toggle navigation menu">
 <div class="bar"></div>
