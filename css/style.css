@@ -102,15 +102,6 @@
     border-radius: 10px;
   }
 
-  /* Layout */
-  /* .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  } */
-  
-  /* Header */
   #header {
     display: flex;
     justify-content: center;
@@ -150,7 +141,12 @@
     background-color: var(--primary-blue);
     color: var(--white);
   }
-  
+
+  .nav-link.active {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    font-weight: bold;
+  }
   
   /* Main Index / Home Page */
   #main-index {
@@ -404,7 +400,7 @@
   }
   
   @media (max-width: 768px) {
-    .header-container {
+    #header{
       flex-direction: column;
       gap: 1rem;
     }
