@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Exercises</title>
 </head>
 
@@ -16,17 +17,17 @@
                 <li><a href="../html/exercises.html" class="nav-link active">Exercise Library</a></li>
                 <li><a href="../html/workout.html" class="nav-link">Workout Log</a></li>
             </ul>
-            <!-- <div class="topnav">
-                <div id="myLinks">
-                    <a href="../html/index.html">Home</a>
-                    <a href="../html/exercises.html">Exercise Library</a>
-                    <a href="../html/workout.html">Workout Log</a>
-                </div>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                  <i class="fa fa-bars"></i>
-                </a>
-              </div> -->
         </nav>
+        <div class="topnav">
+            <div id="myLinks">
+                <a href="../html/index.html">Home</a>
+                <a href="../html/exercises.html">Exercise Library</a>
+                <a href="../html/workout.html">Workout Log</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars fa-3x"></i>
+            </a>
+        </div>
     </header>
 
     <main id="main-exercises">
@@ -85,8 +86,16 @@
     </footer>
 
     <script defer type="module" src="../javascript/exercises.js"></script>
-    <!-- <script defer type="module" src="../javascript/header.js"></script> -->
-    <!-- <script defer type="module" src="../javascript/footer.js"></script> -->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
 </body>
 
 </html>

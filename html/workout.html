@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Workout</title>
 </head>
+
 <body>
     <header id="header">
         <nav>
@@ -14,24 +17,25 @@
                 <li><a href="../html/exercises.html" class="nav-link">Exercise Library</a></li>
                 <li><a href="../html/workout.html" class="nav-link active">Workout Log</a></li>
             </ul>
-            <!-- <div class="topnav">
-                <div id="myLinks">
-                    <a href="../html/index.html">Home</a>
-                    <a href="../html/exercises.html">Exercise Library</a>
-                    <a href="../html/workout.html">Workout Log</a>
-                </div>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                  <i class="fa fa-bars"></i>
-                </a>
-              </div> -->
         </nav>
+        <div class="topnav">
+            <div id="myLinks">
+                <a href="../html/index.html">Home</a>
+                <a href="../html/exercises.html">Exercise Library</a>
+                <a href="../html/workout.html">Workout Log</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars fa-3x"></i>
+            </a>
+        </div>
     </header>
 
     <main id="main-workout">
         <h1>Workout Log</h1>
         <h3>Here is your personal workout tracker</h3>
-        <p>Tracking your workouts is fundamental in order to progress, here you can add your exercises, reps, sets and weight   </p>
-    
+        <p>Tracking your workouts is fundamental in order to progress, here you can add your exercises, reps, sets and
+            weight </p>
+
         <form id="workout-form">
             <input type="text" id="exercise" placeholder="Exercise" required>
             <input type="number" id="sets" placeholder="Sets" required>
@@ -39,7 +43,7 @@
             <input type="number" id="weight" placeholder="Weight (kg)" required>
             <button type="submit">Add Workout</button>
         </form>
-        
+
         <table>
             <thead>
                 <tr>
@@ -62,9 +66,18 @@
             <a href="https://www.linkedin.com/in/aiert-basante-b2002431b/">Linkedin</a>
         </div>
     </footer>
-    
-    <!-- <script defer type="module" src="../javascript/header.js"></script> -->
-    <!-- <script defer type="module" src="../javascript/footer.js"></script> -->
+
     <script defer type="module" src="../javascript/workout.js"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
 </body>
+
 </html>

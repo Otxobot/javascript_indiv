@@ -104,12 +104,13 @@
 
   #header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     background-color: var(--dark-gray);
     position: sticky;
     height: 100px;
     z-index: 100;
     align-items: center;
+    padding: 0 20px;
   }
 
   .nav-links {
@@ -147,7 +148,47 @@
     color: var(--white);
     font-weight: bold;
   }
-  
+
+  .topnav .icon{
+    display: none;
+  }
+
+  .topnav a {
+    display: none;
+  }
+
+  /* Hide the mobile menu initially */
+#myLinks {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 50px;
+  background-color: var(--dark-gray);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Style links inside the dropdown */
+#myLinks a {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+/* Hover effect for dropdown links */
+#myLinks a:hover {
+  background-color: var(--primary-blue);
+}
+
+  /* .topnav {
+    display: none;
+    margin-left: auto;
+    align-items: left;
+  } */
+
+
   /* Main Index / Home Page */
   #main-index {
     min-height: calc(100vh - 140px);
@@ -419,6 +460,24 @@
     
     select {
       width: 100%;
+    }
+
+    .topnav .icon {
+      display: block !important;
+      font-size: 20px;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      z-index: 200;
+  }
+
+  .topnav a{
+    display: block;
+  }
+  
+    .nav-links {
+      display: none;
     }
   }
   
