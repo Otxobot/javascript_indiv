@@ -1,16 +1,6 @@
 import { Exercise } from './clases.js';
 
 async function fetchExercises(type = "", muscle = "", difficulty = "") {
-    /*
-    
-    First function will be for exercises, 
-    this API can give different response depending on the type, muscle or difficulty of each exercise
-    
-    Because of this I will design this function to receive input from a button in the html
-    where the user will be able to filter exercises by type, muscle and difficulty.
-
-    */
-
     const API_URL = new URL("https://api.api-ninjas.com/v1/exercises");
 
     if (type){
@@ -39,42 +29,93 @@ async function fetchExercises(type = "", muscle = "", difficulty = "") {
     ));
 }
 
+// async function displayExercises(exercises) {
+//     console.log("entrando aqui")
+//     const container = document.getElementById("exercise-results");
+//     container.innerHTML = ""; // Clear previous results
+
+//     if (exercises.length == 0)
+//     {
+//         console.log("exercises empty")
+//         const error = document.createElement('p');
+//         error.textContent = "Nothing in the API for you";
+//         container.appendChild(error);
+//     }
+
+//     exercises.forEach(ex => {
+//         const card = document.createElement("div");
+//         card.classList.add("exercise-card");
+//         card.innerHTML = `
+//             <h3>${ex.name}</h3>
+//             <p><strong>Muscle:</strong> ${ex.muscle}</p>
+//             <p><strong>Type:</strong> ${ex.type}</p>
+//             <p><strong>Equipment:</strong> ${ex.equipment}</p>
+//             <p><strong>Difficulty:</strong> ${ex.difficulty}</p>
+//             <p><strong>Instructions:</strong> ${ex.instructions}</p>
+//         `;
+//         container.appendChild(card);
+//     });
+// }
+
 async function displayExercises(exercises) {
     console.log("entrando aqui")
     const container = document.getElementById("exercise-results");
-    container.innerHTML = ""; // Clear previous results
+    container.innerHTML = "";
 
-    if (exercises.length == 0)
-    {
+    if (exercises.length == 0) {
         console.log("exercises empty")
         const error = document.createElement('p');
         error.textContent = "Nothing in the API for you";
         container.appendChild(error);
     }
 
-    // const images = await fetch("https://wger.de/api/v2/exerciseimage/", {
-    //     headers: {
-    //         "Authorization": "Token WnzOrCpuawSpe4EKPUYLIA==HmJyHb3mtzZ2jhsO",
-    //         "Accept": "application/json"
-    //     }
-    // });
-
-    // const images_result = await images.json()
-
-    exercises.forEach(ex => {
+    exercises.forEach((ex, index) => {
         const card = document.createElement("div");
         card.classList.add("exercise-card");
+
+        let shortInstructions = "";
+        if (ex.instructions.length > 100)
+        {
+            shortInstructions = ex.instructions.substring(0,100) + "...";
+        } else {
+            shortInstructions = ex.instructions;
+        }
+
         card.innerHTML = `
             <h3>${ex.name}</h3>
             <p><strong>Muscle:</strong> ${ex.muscle}</p>
             <p><strong>Type:</strong> ${ex.type}</p>
             <p><strong>Equipment:</strong> ${ex.equipment}</p>
             <p><strong>Difficulty:</strong> ${ex.difficulty}</p>
-            <p><strong>Instructions:</strong> ${ex.instructions}</p>
+            <p><strong>Instructions:</strong> 
+                <span id="short-${index}">${shortInstructions}</span>
+                <span id="full-${index}" style="display:none">${ex.instructions}</span>
+            </p>
+            <button class="read-more-btn" data-index="${index}">Read More</button>
         `;
+
         container.appendChild(card);
     });
+
+    document.querySelectorAll(".read-more-btn").forEach(button => {
+        button.addEventListener("click", (event) => {
+            const index = event.target.dataset.index;
+            const shortText = document.getElementById(`short-${index}`);
+            const fullText = document.getElementById(`full-${index}`);
+
+            if (fullText.style.display === "none") {
+                fullText.style.display = "inline";
+                shortText.style.display = "none";
+                event.target.textContent = "Read Less";
+            } else {
+                fullText.style.display = "none";
+                shortText.style.display = "inline";
+                event.target.textContent = "Read More";
+            }
+        });
+    });
 }
+
 
 async function applyFilters() {
     const muscle = document.getElementById("muscle").value;
