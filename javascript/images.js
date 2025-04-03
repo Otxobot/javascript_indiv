@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
         const main = document.getElementById("main-images");
     
-        image_classes.forEach((element, index) => {
+        image_classes.forEach((element) => {
             const image = document.createElement("div");
             image.classList.add("image-card");
             let name = extractExerciseName(element.image);

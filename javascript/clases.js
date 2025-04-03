@@ -1,10 +1,18 @@
-export { Image, Exercise, WorkoutEntry}
+export { Image, Exercise, WorkoutEntry, Video}
 
 class Image {
     constructor(id, image)
     {
         this.id = id;
         this.image = image;
+    }
+}
+
+class Video {
+    constructor(id, video)
+    {
+        this.id = id;
+        this.video = video;
     }
 }
 
