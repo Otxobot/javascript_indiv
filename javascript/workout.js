@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         workouts.push(workout);
         localStorage.setItem("workouts", JSON.stringify(workouts));
+        updateStats();
         renderWorkouts();
         form.reset();
     });
@@ -41,8 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
     window.deleteWorkout = (index) => {
         workouts.splice(index, 1);
         localStorage.setItem("workouts", JSON.stringify(workouts));
+        updateStats();
         renderWorkouts();
     };
 
+    function updateStats() {
+        document.getElementById("total-count").textContent = workouts.length;
+        document.getElementById("last-exercise").textContent = workouts.length > 0 ? workouts[workouts.length - 1].exercise : "None";
+    }
     renderWorkouts();
 });

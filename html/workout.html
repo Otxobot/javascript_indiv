@@ -41,7 +41,13 @@
             weight </p>
 
         <form id="workout-form">
-            <input type="text" id="exercise" placeholder="Exercise" required>
+            <!-- <input type="text" id="exercise" placeholder="Exercise" required> -->
+            <select name="exercise" id="exercise">
+                <option value="">Select Exercise</option>
+                <option value="Bench Press">Bench Press</option>
+                <option value="Squat">Squat</option>
+                <option value="Deadlift">Deadlift</option>
+            </select>
             <input type="number" id="sets" placeholder="Sets" required>
             <input type="number" id="reps" placeholder="Reps" required>
             <input type="number" id="weight" placeholder="Weight (kg)" required>
@@ -61,6 +67,11 @@
             </thead>
             <tbody id="workout-list"></tbody>
         </table>
+
+        <div id="workout-stats">
+            <p>Total workouts: <span id="total-count">0</span></p>
+            <p>Last exercise: <span id="last-exercise">None</span></p>
+        </div>
     </main>
 
     <footer id="footer">
