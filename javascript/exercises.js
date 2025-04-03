@@ -29,34 +29,6 @@ async function fetchExercises(type = "", muscle = "", difficulty = "") {
     ));
 }
 
-// async function displayExercises(exercises) {
-//     console.log("entrando aqui")
-//     const container = document.getElementById("exercise-results");
-//     container.innerHTML = ""; // Clear previous results
-
-//     if (exercises.length == 0)
-//     {
-//         console.log("exercises empty")
-//         const error = document.createElement('p');
-//         error.textContent = "Nothing in the API for you";
-//         container.appendChild(error);
-//     }
-
-//     exercises.forEach(ex => {
-//         const card = document.createElement("div");
-//         card.classList.add("exercise-card");
-//         card.innerHTML = `
-//             <h3>${ex.name}</h3>
-//             <p><strong>Muscle:</strong> ${ex.muscle}</p>
-//             <p><strong>Type:</strong> ${ex.type}</p>
-//             <p><strong>Equipment:</strong> ${ex.equipment}</p>
-//             <p><strong>Difficulty:</strong> ${ex.difficulty}</p>
-//             <p><strong>Instructions:</strong> ${ex.instructions}</p>
-//         `;
-//         container.appendChild(card);
-//     });
-// }
-
 async function displayExercises(exercises) {
     console.log("entrando aqui")
     const container = document.getElementById("exercise-results");
