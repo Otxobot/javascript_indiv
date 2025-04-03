@@ -39,8 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <video width="100%" height="auto" controls>
                 <source src="${element.video}" type="video/mp4" codecs="hvc1">
                 Your browser does not support the video tag.
-            </video>
-                <p>Video ID: ${element.id}</p>`;
+            </video>`;
             
             main.appendChild(video);
         }
