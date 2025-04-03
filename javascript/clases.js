@@ -9,10 +9,11 @@ class Image {
 }
 
 class Video {
-    constructor(id, video)
+    constructor(id, video, codec)
     {
         this.id = id;
         this.video = video;
+        this.codec = codec;
     }
 }
 

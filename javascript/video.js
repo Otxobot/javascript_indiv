@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function getVideos() {
 
-        const images = await fetch("https://wger.de/api/v2/video/?limit=20&offset=20", {
+        const images = await fetch("https://wger.de/api/v2/video/?limit=1000", {
             headers: {
                 "Authorization": "Token d93103f284c50fe1adb30ed74034edb80513c171",
                 "Accept": "application/json"
@@ -18,27 +18,32 @@ document.addEventListener("DOMContentLoaded", () => {
     
         const result = await images.json();
         let video_array = result.results;
-        console.log(video_array);
     
-        let video_classes = video_array.map(ex => new Video(ex.id, ex.video));
-        console.log(video_classes)
+        let video_classes = video_array.map(ex => new Video(ex.id, ex.video, ex.codec));
     
     
         const main = document.getElementById("main-videos");
     
-        video_classes.forEach((element) => {
+        
+
+        for (const element of video_classes) {
             const video = document.createElement("div");
             video.classList.add("video-card");
-    
+            
+
+            if (element.codec !== "h264") {
+                continue;
+            }
+            
             video.innerHTML = `
             <video width="100%" height="auto" controls>
-                <source src="${element.video}" type="video/mp4">
+                <source src="${element.video}" type="video/mp4" codecs="hvc1">
                 Your browser does not support the video tag.
             </video>
-                <p>Video ID: ${element.id}</p>`;    
-    
+                <p>Video ID: ${element.id}</p>`;
+            
             main.appendChild(video);
-        });
+        }
     
     }
 
