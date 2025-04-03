@@ -1,4 +1,3 @@
-/* Global Variables */
 :root {
     --primary-blue: #0066ff;
     --secondary-blue: #00aaff;
@@ -12,7 +11,6 @@
     --transition: all 0.3s ease;
   }
   
-  /* Reset and Base Styles */
   * {
     margin: 0;
     padding: 0;
@@ -27,7 +25,6 @@
     overflow-x: hidden;
   }
   
-  /* Typography */
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     margin-bottom: 1rem;
@@ -101,53 +98,6 @@
     border: 2px solid var(--primary-blue);
     border-radius: 10px;
   }
-
-  /* #header {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--dark-gray);
-    position: sticky;
-    height: 100px;
-    z-index: 100;
-    align-items: center;
-    padding: 0 20px;
-  }
-
-  .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    margin-left: 10px;
-    width: 100%;
-  }
-  
-  .nav-links a {
-    color: var(--black);
-    font-weight: 700;
-    position: relative;
-    padding: 0.5rem 0;
-    background-color: var(--light-gray);
-    border: 2px solid var(--primary-blue);
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .nav-links a:hover {
-    transform: translateY(-5px);
-    background-color: var(--primary-blue);
-    color: var(--white);
-  }
-
-  .nav-link.active {
-    background-color: var(--primary-blue);
-    color: var(--white);
-    font-weight: bold;
-  } */
 
   #header {
     display: flex;
@@ -228,7 +178,6 @@
     display: none;
   }
 
-  /* Hide the mobile menu initially */
 #myLinks {
   display: none;
   position: absolute;
@@ -240,7 +189,6 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Style links inside the dropdown */
 #myLinks a {
   display: block;
   padding: 10px;
@@ -248,19 +196,9 @@
   text-decoration: none;
 }
 
-/* Hover effect for dropdown links */
 #myLinks a:hover {
   background-color: var(--primary-blue);
 }
-
-  /* .topnav {
-    display: none;
-    margin-left: auto;
-    align-items: left;
-  } */
-
-
-  /* Main Index / Home Page */
   #main-index {
     min-height: calc(100vh - 140px);
     display: flex;
@@ -301,7 +239,7 @@
     width: auto;
     height: auto;
     transform: translateX(-50%) translateY(-50%);
-    z-index: -1; /* Places the video behind content */
+    z-index: -1;
 }
   
   .main-index-first h1 {
@@ -311,7 +249,6 @@
     position: relative;
   }
   
-  /* Buttons */
   .button1 {
     background: var(--gradient);
     color: var(--white);
@@ -349,7 +286,6 @@
     background-color: var(--dark-blue);
   }
   
-  /* Exercises Page */
   #main-exercises {
     padding: 4rem 2rem;
     min-height: 80vh;
@@ -383,42 +319,11 @@
     border-color: var(--primary-blue);
   }
   
-  /* Exercise Results */
   #exercise-results {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
   }
-  
-  /* .exercise-card {
-    padding: 20px 20px;
-    background-color: var(--dark-gray);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: var(--box-shadow);
-    transition: var(--transition);
-    position: relative;
-  }
-  
-  .exercise-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  }
-  
-  .exercise-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .exercise-card-content {
-    padding: 1.5rem;
-  }
-  
-  .exercise-card h3 {
-    margin-bottom: 0.5rem;
-    color: var(--primary-blue);
-  } */
 
   #main-images{
     display: grid;
@@ -491,8 +396,8 @@
 
   .exercise-card {
     padding: 24px;
-    background: linear-gradient(135deg, #1e1e1e, #2a2a2a); /* Darker modern gradient */
-    border-radius: 16px; /* Smoother rounded corners */
+    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+    border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
@@ -542,7 +447,7 @@
   }
   
   .instructions {
-    max-height: 4.5em; /* Approx. 3 lines */
+    max-height: 4.5em;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -552,7 +457,7 @@
 }
 
 .instructions.expanded {
-    max-height: none; /* Show full text when expanded */
+    max-height: none;
 }
 
 .read-more-btn {
@@ -584,7 +489,6 @@
     margin-bottom: 0.5rem;
   }
   
-  /* Workout Page */
   #main-workout {
     padding: 4rem 2rem;
     min-height: 80vh;
@@ -599,19 +503,11 @@
     box-shadow: var(--box-shadow);
   }
   
-  /* Footer */
   #footer {
     background-color: var(--dark-gray);
     padding: 2rem 0;
     text-align: center;
   }
-  
-  /* .footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  } */
   
   .social-links {
     display: flex;
@@ -648,7 +544,6 @@
     font-size: 0.9rem;
   }
   
-  /* Responsive Design */
   @media (max-width: 992px) {
     h1 {
       font-size: 2.5rem;
@@ -727,7 +622,6 @@
     }
   }
 
-  /* Enhanced Hero Section */
 .hero-content {
     position: relative;
     max-width: 80%;
@@ -772,7 +666,6 @@
     background: var(--gradient);
   }
   
-  /* Features Section */
   .features-section {
     padding: 5rem 0;
     background-color: var(--dark-gray);
@@ -888,7 +781,6 @@
     box-shadow: 0 6px 15px rgba(0, 102, 255, 0.4);
   }
   
-  /* Testimonials Section */
   .testimonials {
     padding: 5rem 0;
     background-color: var(--dark-gray);
@@ -959,7 +851,6 @@
     margin-bottom: 0;
   }
   
-  /* Responsive */
   @media (max-width: 992px) {
     .hero-content {
       padding: 0 1.5rem;

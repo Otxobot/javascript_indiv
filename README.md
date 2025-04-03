@@ -1,6 +1,6 @@
 # FitPro - Your Personal Fitness Companion
 
-![FitPro Logo](assets/untitled.mp4) <!-- Consider adding a proper logo image -->
+![FitPro Logo](assets/untitled.mp4)
 
 FitPro is a comprehensive fitness web application that helps users discover exercises, track workouts, and visualize exercises with images. It integrates with external fitness APIs to provide a rich exercise database.
 

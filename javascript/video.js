@@ -1,9 +1,4 @@
 import { Video } from './clases.js';
-// async function getImages() 
-
-// function extractExerciseName(url) {
-//     return url.split('/').pop().replace('.png', '');
-// }
 
 document.addEventListener("DOMContentLoaded", () => {
 
